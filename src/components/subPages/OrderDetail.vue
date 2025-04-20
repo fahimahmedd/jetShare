@@ -20,10 +20,12 @@
       <span class="text-h5"> Total : </span>
       <span class="text-h4"> <strong>5990 $</strong> </span>
     </div>
-
+    <router-link to="/guest">
+                    
     <v-btn class="booking-btn mt-10" variant="flat"
             rounded="lg" size="large" block color="#657ca2"
             >Continue</v-btn>
+                  </router-link>
   </div>
 </template>
 

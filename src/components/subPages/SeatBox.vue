@@ -1,14 +1,14 @@
 <script setup>
-import { reactive } from 'vue';
+import { reactive } from "vue";
 
 const seats = reactive([
-  { id: 1, class: 'seat-1', selected: false, booked: false },
-  { id: 2, class: 'seat-2', selected: false, booked: false },
-  { id: 3, class: 'seat-3', selected: false, booked: true },
-  { id: 4, class: 'seat-4', selected: false, booked: false },
-  { id: 5, class: 'seat-5', selected: false, booked: true },
-  { id: 6, class: 'seat-6', selected: false, booked: false },
-  { id: 7, class: 'seat-7', selected: false, booked: false },
+  { id: 1, class: "seat-1", selected: false, booked: false },
+  { id: 2, class: "seat-2", selected: false, booked: false },
+  { id: 3, class: "seat-3", selected: false, booked: true },
+  { id: 4, class: "seat-4", selected: false, booked: false },
+  { id: 5, class: "seat-5", selected: false, booked: true },
+  { id: 6, class: "seat-6", selected: false, booked: false },
+  { id: 7, class: "seat-7", selected: false, booked: false },
 ]);
 
 const toggleSeat = (id) => {
@@ -31,26 +31,45 @@ const toggleSeat = (id) => {
       density="compact"
       variant="tonal"
     >
-    <span v-if="seat.booked" class="booked-text text-caption text-white font-weight-medium">BOKAD</span>
+      <span
+        v-if="seat.booked"
+        class="booked-text text-caption text-white font-weight-medium"
+        >BOKAD</span
+      >
     </v-btn>
   </div>
 
-
   <div class="seat-overview mt-16">
-     <div class="d-flex align-center ga-2">
-        <span class="seat-shape booked-seat"></span>
-        <span>Booked Seat</span>
-     </div>
-     <div class="d-flex align-center ga-2">
-        <span class="seat-shape choosen-seat"></span>
-        <span>Choosen Seat</span>
-     </div>
+    <div class="d-flex align-center ga-2">
+      <span class="seat-shape booked-seat"></span>
+      <span>Booked Seat</span>
+    </div>
+    <div class="d-flex align-center ga-2">
+      <span class="seat-shape choosen-seat"></span>
+      <span>Choosen Seat</span>
+    </div>
   </div>
   <div class="seat-footer d-flex justify-space-between mt-16">
     <div class="d-flex ga-4 align-center">
-       <div><v-img src="/public/images/seat/seat.png" height="22" width="22"></v-img></div> <span>Seating <strong>3L</strong> </span>
+      <div>
+        <v-img
+          src="/public/images/seat/seat.png"
+          height="22"
+          width="22"
+        ></v-img>
+      </div>
+      <span>Seating <strong>3L</strong> </span>
     </div>
-    <v-btn size="x-large" density="comfortable" variant="tonal"  max-width="260" rounded>1/2</v-btn>
+    <router-link to="/trip">
+      <v-btn
+        size="x-large"
+        density="comfortable"
+        variant="tonal"
+        max-width="260"
+        rounded
+        >1/2</v-btn
+      >
+    </router-link>
   </div>
 </template>
 
@@ -59,7 +78,7 @@ const toggleSeat = (id) => {
   height: 165px;
   width: 100%;
   max-width: 800px;
-  background-image: url('/images/seat/plane-plate.png');
+  background-image: url("/images/seat/plane-plate.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -67,10 +86,10 @@ const toggleSeat = (id) => {
   z-index: 1;
 }
 
-.seat-mobile-container{
+.seat-mobile-container {
   height: 600px;
   width: 100%;
-  background-image: url('/images/seat/m-plan-plate.png');
+  background-image: url("/images/seat/m-plan-plate.png");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -88,35 +107,63 @@ const toggleSeat = (id) => {
 }
 
 /* Seat positioning and background */
-.seat-1 { background-image: url(/public/images/seat/seat-1.png); top: 25px; left: 185px; }
-.seat-2 { background-image: url(/public/images/seat/seat-2.png); top: 25px; left: 280px; }
-.seat-3 { background-image: url(/public/images/seat/seat-3.png); top: 25px; left: 390px; }
-.seat-4 { background-image: url(/public/images/seat/seat-4.png); top: 25px; right: 260px; }
-.seat-5 { background-image: url(/public/images/seat/seat-5.png); bottom: 27px; left: 280px; }
-.seat-6 { background-image: url(/public/images/seat/seat-6.png); bottom: 27px; left: 390px; }
-.seat-7 { background-image: url(/public/images/seat/seat-7.png); bottom: 27px; right: 260px; }
+.seat-1 {
+  background-image: url(/public/images/seat/seat-1.png);
+  top: 25px;
+  left: 185px;
+}
+.seat-2 {
+  background-image: url(/public/images/seat/seat-2.png);
+  top: 25px;
+  left: 280px;
+}
+.seat-3 {
+  background-image: url(/public/images/seat/seat-3.png);
+  top: 25px;
+  left: 390px;
+}
+.seat-4 {
+  background-image: url(/public/images/seat/seat-4.png);
+  top: 25px;
+  right: 260px;
+}
+.seat-5 {
+  background-image: url(/public/images/seat/seat-5.png);
+  bottom: 27px;
+  left: 280px;
+}
+.seat-6 {
+  background-image: url(/public/images/seat/seat-6.png);
+  bottom: 27px;
+  left: 390px;
+}
+.seat-7 {
+  background-image: url(/public/images/seat/seat-7.png);
+  bottom: 27px;
+  right: 260px;
+}
 
 .selected {
-  background-color: #3db641f6 !important; 
+  background-color: #3db641f6 !important;
   color: white;
 }
 
 /* Booked seat style */
 .booked {
-  background-color: #eeeeeea8; 
+  background-color: #eeeeeea8;
   pointer-events: none;
-  opacity: .8;
+  opacity: 0.8;
 }
-.booked .booked-text{
+.booked .booked-text {
   position: relative;
   z-index: 111;
 }
-.seat-overview{
+.seat-overview {
   display: flex;
   align-items: center;
   gap: 60px;
 }
-.seat-shape{
+.seat-shape {
   height: 20px;
   width: 25px;
   border-top-left-radius: 10px;
@@ -124,63 +171,131 @@ const toggleSeat = (id) => {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 2px;
 }
-.booked-seat{
+.booked-seat {
   background-color: #b9b9b9;
 }
-.choosen-seat{
-  background-color:#358b38fd ;
+.choosen-seat {
+  background-color: #358b38fd;
 }
 
-@media (max-width: 1260px){
+@media (max-width: 1260px) {
   .seat-container {
-  height: 145px;
-  max-width: 700px;
+    height: 145px;
+    max-width: 700px;
+  }
+
+  .seat-1 {
+    top: 20px;
+    left: 162px;
+  }
+  .seat-2 {
+    top: 20px;
+    left: 245px;
+  }
+  .seat-3 {
+    top: 20px;
+    left: 350px;
+  }
+  .seat-4 {
+    top: 20px;
+    right: 230px;
+  }
+  .seat-5 {
+    bottom: 22px;
+    left: 250px;
+  }
+  .seat-6 {
+    bottom: 22px;
+    left: 345px;
+  }
+  .seat-7 {
+    bottom: 22px;
+    right: 230px;
+  }
+  .seat-item {
+    height: 35px !important;
+    width: 40px;
+  }
 }
 
-.seat-1 {  top: 20px; left: 162px; }
-.seat-2 {  top: 20px; left: 245px; }
-.seat-3 {  top: 20px; left: 350px; }
-.seat-4 {  top: 20px; right: 230px; }
-.seat-5 {  bottom: 22px; left: 250px; }
-.seat-6 {  bottom: 22px; left: 345px; }
-.seat-7 {  bottom: 22px; right: 230px; }
-.seat-item {
-  height: 35px !important;
-  width: 40px;
-}
-}
-
-@media (max-width: 1160px){
+@media (max-width: 1160px) {
   .seat-container {
-  max-width: 600px;
-  background-image: url('/images/seat/md-seat-plan.svg');
-}
-.seat-1 {  top: 20px; left: 120px; }
-.seat-2 {  top: 20px; left: 205px; }
-.seat-3 {  top: 20px; left: 305px; }
-.seat-4 {  top: 20px; right: 165px; }
-.seat-5 {  bottom: 22px; left: 207px; }
-.seat-6 {  bottom: 22px; left: 306px; }
-.seat-7 {  bottom: 22px; right: 168px; }
+    max-width: 600px;
+    background-image: url("/images/seat/md-seat-plan.svg");
+  }
+  .seat-1 {
+    top: 20px;
+    left: 120px;
+  }
+  .seat-2 {
+    top: 20px;
+    left: 205px;
+  }
+  .seat-3 {
+    top: 20px;
+    left: 305px;
+  }
+  .seat-4 {
+    top: 20px;
+    right: 165px;
+  }
+  .seat-5 {
+    bottom: 22px;
+    left: 207px;
+  }
+  .seat-6 {
+    bottom: 22px;
+    left: 306px;
+  }
+  .seat-7 {
+    bottom: 22px;
+    right: 168px;
+  }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
   .seat-container {
     height: 600px;
     width: 180px;
-    background-image: url('/images/seat/m-seat-plan.svg');
+    background-image: url("/images/seat/m-seat-plan.svg");
     margin: 0 auto;
-}
-.seat-item {
-  transform: rotate(90deg);
-}
-.seat-1 {  top: 95px; right: 30px; left: auto; }
-.seat-2 {  top: 190px; right: 30px; left: auto;}
-.seat-3 {  top: 310px; right: 30px; left: auto;}
-.seat-4 {  bottom: 155px; top: auto; right: 30px;}
-.seat-5 {  top: 200px; left: 30px; }
-.seat-6 {  top: 310px; left: 30px; }
-.seat-7 {  bottom:160px ; top: auto; left: 30px; right: auto; }
-
+  }
+  .seat-item {
+    transform: rotate(90deg);
+  }
+  .seat-1 {
+    top: 95px;
+    right: 30px;
+    left: auto;
+  }
+  .seat-2 {
+    top: 190px;
+    right: 30px;
+    left: auto;
+  }
+  .seat-3 {
+    top: 310px;
+    right: 30px;
+    left: auto;
+  }
+  .seat-4 {
+    bottom: 155px;
+    top: auto;
+    right: 30px;
+  }
+  .seat-5 {
+    top: 200px;
+    left: 30px;
+  }
+  .seat-6 {
+    top: 310px;
+    left: 30px;
+  }
+  .seat-7 {
+    bottom: 160px;
+    top: auto;
+    left: 30px;
+    right: auto;
+  }
 }
 </style>

@@ -48,9 +48,11 @@ const modules = [Autoplay, EffectFade];
         <v-container>
             <h1>Nu är det Officiellt: Flyg direkt till Stockholm, Bromma</h1>
             <h1>Från och med Juni 2025</h1>
+            <router-link to="/flight">
             <v-btn class="booking-btn mt-5" append-icon="mdi-arrow-right" variant="outlined"
             rounded="xl" size="large" width="300"
             >Book Your Seat</v-btn>
+            </router-link>
         </v-container>
       </div>
    </div>

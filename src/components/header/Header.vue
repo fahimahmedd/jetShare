@@ -32,26 +32,6 @@ watch(originPlaceholder, (newVal) => {
 
 
 
-// const destinationList = ref([
-//   {
-//     city: "Tokyo",
-//     airport: "Haneda Airport",
-//     code: "HND",
-//     value: "HND",
-//   },
-//   {
-//     city: "Dubai",
-//     airport: "Dubai International Airport",
-//     code: "DXB",
-//     value: "DXB",
-//   },
-//   {
-//     city: "Paris",
-//     airport: "Charles de Gaulle Airport",
-//     code: "CDG",
-//     value: "CDG",
-//   },
-// ]);
 
 const destinationPlaceholder = ref({
   city: "Destination",
@@ -105,6 +85,7 @@ const isRoundTrip = ref(false)
 <template>
   {{ flightStore.destinationData }}
   <div class="header">
+    <router-link to="/">
     <div class="logo">  
       <v-img
         src="/public/images/logo/logo.png"
@@ -113,6 +94,7 @@ const isRoundTrip = ref(false)
         class="logo-img"
       ></v-img>
     </div>
+    </router-link>
     <!-- Origin -->
     <div class="transport-wrapper d-none d-md-flex">
       <div class="transport-wrap">

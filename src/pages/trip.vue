@@ -11,10 +11,12 @@ import SubHeader from "@/components/subPages/SubHeader.vue";
           class="subpage-left"
           style="background-image: url('/public/images/subPage/trip.svg')"
         >
-          <div class="logo">
-            <v-img src="/public/images/logo/logo.png" max-width="130"></v-img>
-          </div>
-          <DepartureHistory/>
+          <router-link to="/">
+            <div class="logo">
+              <v-img src="/public/images/logo/logo.png" max-width="130"></v-img>
+            </div>
+          </router-link>
+          <DepartureHistory />
         </div>
       </v-col>
       <v-col cols="6">
@@ -25,8 +27,7 @@ import SubHeader from "@/components/subPages/SubHeader.vue";
               Trip Summary
             </h2>
             <Coupon />
-            <OrderDetail/>
-
+            <OrderDetail />
           </v-container>
         </div>
       </v-col>

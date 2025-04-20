@@ -18,41 +18,9 @@ import SubHeader from "@/components/subPages/SubHeader.vue";
           </router-link>
 
           <h3 class="text-grey-lighten-2 font-weight-regular">
-            Who will be flying to <strong class="text-white">Stockholm?</strong>
+            let's Checkout your Trip!
+            <strong class="text-white">Stockholm</strong>
           </h3>
-          <div class="guest-list mt-10">
-            <h4 class="text-white">Guests</h4>
-            <v-btn
-              class="guest-item"
-              height="auto"
-              min-height="unset"
-              variant="flat"
-              rounded="lg"
-              color="#6C7A90"
-            >
-              <div class="text-left">
-                <h5 class="text-h6 text-white font-weight-medium">Adult 1</h5>
-                <p class="font-weight-medium text-grey-lighten-2">
-                  Missing Information
-                </p>
-              </div>
-            </v-btn>
-            <v-btn
-              class="guest-item"
-              height="auto"
-              min-height="unset"
-              variant="flat"
-              rounded="lg"
-              color="#6C7A90"
-            >
-              <div class="text-left">
-                <h5 class="text-h6 text-white font-weight-medium">Adult 2</h5>
-                <p class="font-weight-medium text-grey-lighten-2">
-                  Missing Information
-                </p>
-              </div>
-            </v-btn>
-          </div>
         </div>
       </v-col>
       <v-col cols="12" lg="7" md="8">
@@ -61,14 +29,9 @@ import SubHeader from "@/components/subPages/SubHeader.vue";
           <v-container>
             <div class="guest-form">
               <h2 class="text-black font-weight-medium text-h4 mt-5">
-                Guest Info
-                <span
-                  class="placeholder-text text-grey-darken-1 font-weight-medium text-h6 mt-10"
-                  >(Adult 1)</span
-                >
+                Checkout
               </h2>
-
-              <GuestForm />
+              <CheckOut />
             </div>
           </v-container>
         </div>
@@ -122,26 +85,6 @@ h3 {
   position: relative;
 }
 
-.guest-list {
-  max-width: 350px;
-}
-
-.guest-item {
-  border-radius: 5px;
-  margin-top: 12px;
-  text-transform: capitalize !important;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 10px 20px;
-  width: 100%;
-}
-.guest-item p {
-  font-size: 12px;
-}
-.guest-form {
-  max-width: 560px;
-  margin: 0 auto;
-}
 @media (max-width: 991px) {
   .subpage-left {
     height: auto;
