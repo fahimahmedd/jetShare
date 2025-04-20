@@ -21,7 +21,7 @@ import SubHeader from "@/components/subPages/SubHeader.vue";
         <div class="subpage-content">
           <SubHeader />
           <v-container>
-            <h2 class="text-black font-weight-regular text-h3 mt-10">
+            <h2 class="text-black font-weight-regular text-h4 mt-5">
               Trip Summary
             </h2>
             <Coupon />

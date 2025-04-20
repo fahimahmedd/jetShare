@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <h3 class="text-black font-weight-regular text-h4 mt-16">Order Details</h3>
+  <h3 class="text-black font-weight-medium text-h5 mt-10">Order Details</h3>
   <div class="detail-content mt-5">
     <div class="detail-item">
       <span>Adult (1) </span>

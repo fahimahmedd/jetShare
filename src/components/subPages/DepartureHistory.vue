@@ -5,7 +5,7 @@
 <template>
     <div class="departure-history">
         <h3 class="text-h4 text-grey-lighten-2">Departure</h3>
-        <h3 class="text-h3 text-white mt-2">Thursday, April 3</h3>
+        <h3 class="text-h4 text-white mt-2">Thursday, April 3</h3>
         <v-divider class="my-2 mt-10" color="#fff"></v-divider>
         <div class="departure-item">
             <div class="flight-content">
@@ -66,11 +66,8 @@
                         </div>
                     </v-col>
                 </v-row>
-
-
-
             </div>
-    </div>
+       </div>
     </div>
      
 </template>
@@ -85,11 +82,11 @@
     margin: 60px auto 0;
 }
 .departure-item {
-    height: 150px;
+    height: auto;
     width: 100%;
     max-width: 600px;
     border-radius: 10px;
-    padding: 16px;
+    padding: 10px 0;
 }
 
 .flight-content {
