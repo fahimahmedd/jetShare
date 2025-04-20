@@ -8,14 +8,10 @@
         class="package-bg mt-6 d-flex align-end"
         style="background-image: url('/public/images/explore/package-bg.webp')"
       >
-        <v-row class="d-flex align-center">
-          <v-col cols="5"> 
-             <div class="package-content">
+      <div class="package-content">
                 <h4 class="text-h6 font-weight-regular">Meadowood</h4>
                 <p class="text-grey-darken-1 font-weight-regular">Experience a fixture of the northern wine country community and recipient of the Michelin Three Key award, nestled in the woodlands of St. Helena.</p>
              </div>
-          </v-col>
-        </v-row>
       </div>
     </v-container>
   </div>
@@ -50,6 +46,7 @@
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
+    max-width: 500px;
 
 }
 .package-content p{

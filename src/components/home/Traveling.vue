@@ -6,7 +6,7 @@
     <div class="explore py-10 bg-black">
         <v-container>
             <v-row class="d-flex align-center">
-                <v-col cols="5">
+                <v-col cols="12" lg="5" md="6">
                     <div class="explore-content">
                     <h2 class="text-h4 text-white">The Art of Traveling Well </h2>
                     <h3 class="text-white font-weight-light">Thoughtfully curated to redefine your expectations.</h3>
@@ -18,7 +18,7 @@
             rounded="xl" size="large" width="400"
             >Book Your Seat</v-btn>
                 </v-col>
-                <v-col cols="7">
+                <v-col cols="12" lg="7" md="6">
                     <v-img src="/public/images/explore/travel.webp"   cover
                     rounded="xl"></v-img>
                 </v-col>
@@ -40,5 +40,10 @@
     background-color: #fff;
     font-weight: 700;
     color: #000;
+}
+@media (max-width: 991px) {
+    .explore-content h3{
+    padding-top: 20px;
+   }
 }
 </style>

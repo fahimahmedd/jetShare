@@ -49,7 +49,7 @@ const modules = [Autoplay, EffectFade];
             <h1>Nu är det Officiellt: Flyg direkt till Stockholm, Bromma</h1>
             <h1>Från och med Juni 2025</h1>
             <v-btn class="booking-btn mt-5" append-icon="mdi-arrow-right" variant="outlined"
-            rounded="xl" size="large" width="360"
+            rounded="xl" size="large" width="300"
             >Book Your Seat</v-btn>
         </v-container>
       </div>
@@ -93,5 +93,12 @@ const modules = [Autoplay, EffectFade];
     background-color: #d7e1f239;
     color: #fff;
     font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .hero-text h1{
+    font-size: 26px;
+    font-weight: 500;
+}
 }
 </style>

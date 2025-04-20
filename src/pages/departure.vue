@@ -6,7 +6,7 @@ import SubHeader from '@/components/subPages/SubHeader.vue';
 <template>
     <div class="subpage-container">
         <v-row no-gutters>
-            <v-col cols="4">
+            <v-col cols="12" lg="4" md="12">
                 <div class="subpage-left" style="background-image: url('/public/images/subPage/departure.svg')">
                     <div class="logo">
                         <v-img src="/public/images/logo/logo.png" max-width="130"></v-img>
@@ -17,7 +17,7 @@ import SubHeader from '@/components/subPages/SubHeader.vue';
                     </h3>
                 </div>
             </v-col>
-            <v-col cols="8">
+            <v-col cols="12" lg="8" md="12">
                 <div class="subpage-content">
                     <SubHeader />
                     <v-container>
@@ -76,5 +76,25 @@ h3{
 }
 .subpage-content{
     padding-left: 20px;
+}
+
+@media (max-width: 991px) {
+    .subpage-container {
+    height: auto;
+}
+.subpage-left {
+    height: auto;
+    padding: 20px;
+}
+h3{
+    margin-top: 50px;
+}
+.subpage-content[data-v-49e4dc52] {
+    padding-left: 0px;
+}
+h2{
+    margin-top: 15px !important;
+    font-size: 36px !important;
+}
 }
 </style>

@@ -2,7 +2,7 @@
   <v-footer class="py-10">
     <v-container>
       <v-row>
-        <v-col cols="3">
+        <v-col cols="6" lg="3" md="4">
           <h4 class="text-grey-darken-1 font-weight-regular">Aero</h4>
           <ul>
             <li><a href="#"> Safety </a></li>
@@ -14,7 +14,7 @@
             <li><a href="#"> Careers </a></li>
           </ul>
         </v-col>
-        <v-col cols="3">
+        <v-col cols="6" lg="3" md="4">
           <h4 class="text-grey-darken-1 font-weight-regular">
             Guest Resources
           </h4>
@@ -28,7 +28,7 @@
             <li><a href="#"> Careers </a></li>
           </ul>
         </v-col>
-        <v-col cols="2">
+        <v-col cols="5" lg="2" md="4">
           <h4 class="text-grey-darken-1 font-weight-regular">Connect</h4>
           <ul>
             <li><a href="#"> Contact Us </a></li>
@@ -38,7 +38,7 @@
             <li><a href="#"> X </a></li>
           </ul>
         </v-col>
-        <v-col cols="4">
+        <v-col cols="7" lg="4" md="4">
           <h4 class="text-caption-2 text-grey-darken-1 font-weight-regular">
             Sign up for info on special partnerships and new destinations
           </h4>
@@ -61,14 +61,13 @@
 
       <div class="footer-bottom">
         <v-row>
-          <v-col cols="6"
-            ><p class="text-caption text-grey-darken-1 font-weight-regular">
+          <v-col cols="12" lg="6" md="6"><p class="text-caption text-grey-darken-1 font-weight-regular">
               Unless otherwise advised: All flights within North America are
               operated by USAC Airways 695 LLC dba Aero, and Aero Technologies
               Inc. Acts as an indirect air carrier under US-DOT Part 380.
             </p></v-col
           >
-          <v-col cols="6">
+          <v-col cols="12" lg="6" md="6">
             <ul class="bottom-navigate d-flex">
               <li><a href="#"> Privacy Policy </a></li>
               <li>

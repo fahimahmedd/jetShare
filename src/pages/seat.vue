@@ -7,7 +7,7 @@ import SubHeader from '@/components/subPages/SubHeader.vue';
 <template>
     <div class="subpage-container">
         <v-row no-gutters>
-            <v-col cols="4">
+            <v-col cols="12" lg="4" md="4">
                 <div class="subpage-left" style="background-image: url('/public/images/subPage/seat.svg')">
                     <div class="logo">
                         <v-img src="/public/images/logo/logo.png" max-width="130"></v-img>
@@ -18,7 +18,7 @@ import SubHeader from '@/components/subPages/SubHeader.vue';
                     </h3>
                 </div>
             </v-col>
-            <v-col cols="8">
+            <v-col cols="12" lg="8" md="8">
                 <div class="subpage-content">
                     <SubHeader />
                     <v-container>
@@ -73,5 +73,24 @@ h3{
 .placeholder-text{
     position: relative;
     top: -30px;
+}
+
+@media (max-width: 991px) {
+    .subpage-left{
+    height: auto;
+    padding: 20px;
+}
+h3 {
+    margin-top: 40px;
+}
+.subpage-content {
+    padding-left: 0px;
+}
+.subpage-content h2{
+  font-size: 32px !important;
+}
+.placeholder-text{
+  font-size: 30px !important;
+}
 }
 </style>

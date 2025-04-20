@@ -20,7 +20,7 @@ const toggleSeat = (id) => {
 </script>
 
 <template>
-  <div class="seat-container">
+  <div class="seat-container d-none d-sm-flex">
     <v-btn
       v-for="seat in seats"
       :key="seat.id"
@@ -34,6 +34,23 @@ const toggleSeat = (id) => {
     <span v-if="seat.booked" class="booked-text text-caption text-white font-weight-medium">BOKAD</span>
     </v-btn>
   </div>
+
+  <div class="seat-mobile-container d-block d-sm-none">
+    <v-btn
+      v-for="seat in seats"
+      :key="seat.id"
+      :class="[seat.class, { selected: seat.selected, booked: seat.booked }]"
+      class="seat-item"
+      :disabled="seat.booked"
+      @click="toggleSeat(seat.id)"
+      density="compact"
+      variant="tonal"
+    >
+    <span v-if="seat.booked" class="booked-text text-caption text-white font-weight-medium">BOKAD</span>
+    </v-btn>
+  </div>
+
+
 
   <div class="seat-overview mt-16">
      <div class="d-flex align-center ga-2">
@@ -65,6 +82,16 @@ const toggleSeat = (id) => {
   z-index: 1;
 }
 
+.seat-mobile-container{
+  height: 600px;
+  width: 100%;
+  background-image: url('/images/seat/m-plan-plate.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
 .seat-item {
   height: 40px !important;
   width: 50px;
@@ -118,5 +145,22 @@ const toggleSeat = (id) => {
 }
 .choosen-seat{
   background-color:#358b38fd ;
+}
+
+
+.seat-mobile-container{
+
+}
+
+@media (max-width: 991px){
+
+ .seat-1 {  top: 25px; left: 235px; }
+.seat-2 {  top: 25px; left: 340px; }
+.seat-3 {  top: 25px; left: 465px; }
+.seat-4 {  top: 25px; right: 325px; }
+.seat-5 {  bottom: 27px; left: 340px; }
+.seat-6 {  bottom: 27px; left: 460px; }
+.seat-7 {  bottom: 27px; right: 320px; }
+
 }
 </style>

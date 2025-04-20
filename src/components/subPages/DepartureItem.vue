@@ -8,14 +8,14 @@
             <h2 class="text-white">Mon, May 12</h2>
             <div class="flight-content mt-2">
                 <v-row>
-                    <v-col cols="3">
+                    <v-col cols="6" lg="3" md="4">
                         <div>
                             <h3 class="text-h5 text-white font-weight-medium">08:05</h3>
                             <h5 class="text-body-1 text-grey-lighten-4 font-weight-medium">Göteborg</h5>
                             <p class="text-caption text-grey-lighten-2">Landvetter Flygplats</p>
                         </div>
                     </v-col>
-                    <v-col cols="6">
+                    <v-col cols="6" lg="3" md="4" class="d-none d-sm-flex">
                         <div>
                             <v-img src="/public/images/subPage/plane.svg" class="mx-auto" width="100%" max-width="260px"></v-img>
                             <div class="time-text text-center text-caption text-white font-weight-regular">
@@ -23,7 +23,7 @@
                         </div>
                         </div>
                     </v-col>
-                    <v-col cols="3">
+                    <v-col cols="6" lg="3" md="4">
                         <div class="text-right">
                             <h3 class="text-h5 text-white font-weight-medium">08:45</h3>
                             <h5 class="text-body-1 text-grey-lighten-4 font-weight-medium">Stockholm</h5>
@@ -46,7 +46,6 @@
                 <span class="mdi mdi-car-seat"></span>
                 <span class="mdi mdi-car-seat"></span>
                 <span class="mdi mdi-car-seat"></span>
-
             </div>
         </div>
     </div>
@@ -121,5 +120,22 @@
     width: 1px;
     height: 100%;
     background-color: #d5d4d4;
+}
+
+@media (max-width: 991px) {
+    .departure-item {
+    height: auto;
+    display: grid;
+    padding: 16px;
+}
+.item-content {
+    width: 100%;
+    padding-right: 10px;
+}
+.item-price {
+    width: 100%;
+    border-left: none;
+    margin-top: 20px;
+}
 }
 </style>

@@ -114,7 +114,7 @@ const isRoundTrip = ref(false)
       ></v-img>
     </div>
     <!-- Origin -->
-    <div class="transport-wrapper">
+    <div class="transport-wrapper d-none d-md-flex">
       <div class="transport-wrap">
         <v-select
           v-model="originPlaceholder"
@@ -240,7 +240,7 @@ const isRoundTrip = ref(false)
       transition="scale-transition"
     >
       <template v-slot:activator="{ props }">
-        <div class="add-guest" v-bind="props">
+        <div class="add-guest d-none d-md-flex" v-bind="props">
           <div class="guest-container">
             <div class="guest-title text-grey-darken-1">Guests</div>
             <div class="guest-content d-flex justify-space-between align-center">
@@ -269,7 +269,7 @@ const isRoundTrip = ref(false)
 
 
     <!-- Round trip -->
-    <div class="d-flex align-center">
+    <div class="d-none d-md-flex align-center">
     <!-- Vertical Switch -->
     <v-switch
       v-model="isRoundTrip"
@@ -302,7 +302,7 @@ const isRoundTrip = ref(false)
 
   <router-link to="/departure">
     <v-btn
-      class="next-btn"
+      class="next-btn d-none d-md-flex"
       icon="mdi-arrow-right"
       size="large"
       rounded="lg"
@@ -315,7 +315,7 @@ const isRoundTrip = ref(false)
     <v-btn
     density="comfortable"
       icon="mdi-menu"
-      rounded="sm"
+      rounded="lg"
     ></v-btn>
   </div>
 </template>
@@ -526,6 +526,16 @@ const isRoundTrip = ref(false)
 ::v-deep(.v-switch__thumb){
   background-color: #6d92cf;
 }
+
+@media (max-width: 991px) {
+  .header{
+    height: 60px;
+    width: 95%;
+    border-radius: 10px;
+    padding: 0 20px;
+  }
+}
+
 
 
 </style>

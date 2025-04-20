@@ -35,11 +35,15 @@ const featureItems = [
               <v-col
                 v-for="(item, id) in featureItems"
                 :key="id"
-                cols="6"
-                class="mt-10 px-10"
+                cols="12"
+                sm="12"
+                md="6"
+                lg="6"
               >
                 <div class="feature-item">
-                  <v-img max-width="60" :src="item.img"></v-img>
+                  <div>
+                    <v-img max-width="60" :src="item.img"></v-img>
+                  </div>
                   <p class="mt-5">{{ item.text }}</p>
                 </div>
               </v-col>
@@ -90,8 +94,11 @@ const featureItems = [
   font-size: 38px;
   font-weight: 400;
 }
+.feature-item{
+  padding: 20px;
+}
 .feature-item p {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 .booking-btn{
@@ -99,4 +106,11 @@ const featureItems = [
     font-weight: 700;
     color: #000;
 }
+
+@media (max-width: 991px) {
+  .feature-item{
+    padding: 0px;
+  }
+}
+
 </style>

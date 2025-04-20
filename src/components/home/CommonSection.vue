@@ -4,7 +4,7 @@
   <div class="common-section">
     <v-container>
       <v-row class="d-flex align-center">
-        <v-col cols="6">
+        <v-col cols="12" lg="6" md="7">
           <div class="feature-content">
             <h2 class="text-grey-darken-1">Interested in private charters?</h2>
             <h2>Fly anywhere, anytime</h2>
