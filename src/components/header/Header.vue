@@ -1,8 +1,8 @@
 <script setup>
 import { useFlightStore } from "@/stores/useFlight";
 import { storeToRefs } from "pinia";
-import { onMounted, ref } from "vue";
-import { url } from '@/plugins/baseUrl'
+import { ref } from "vue";
+import { url } from "@/plugins/baseUrl";
 import { useAxios } from "@vueuse/integrations/useAxios";
 
 const flightStore = useFlightStore();
@@ -11,27 +11,23 @@ const originList = computed(() => originData.value);
 const destinationList = computed(() => destinationData.value);
 
 const originPlaceholder = ref({
-  city: "Origin", 
+  city: "Origin",
   airport: "",
   code: "",
-  value: "",  
-}); 
+  value: "",
+});
 
 const {
-    execute: executeDestination,
-    data: destinationData,
-    isLoading: loadingDestination,
-  } = useAxios('', { immediate: true })
-
+  execute: executeDestination,
+  data: destinationData,
+  isLoading: loadingDestination,
+} = useAxios("", { immediate: true });
 
 watch(originPlaceholder, (newVal) => {
   if (newVal) {
     executeDestination(`${url}/airport-routes/${newVal.id}`);
   }
 });
-
-
-
 
 const destinationPlaceholder = ref({
   city: "Destination",
@@ -41,59 +37,58 @@ const destinationPlaceholder = ref({
 });
 
 // Guest Menu visibility
-const menu = ref(false)
+const menu = ref(false);
 
 // Guest data
 const addGuest = ref([
   {
-    title: 'Adult',
-    description: 'Ages 2+',
+    title: "Adult",
+    description: "Ages 2+",
     value: 1,
   },
   {
-    title: 'Infants',
-    description: 'Ages 2–12',
+    title: "Infants",
+    description: "Ages 2–12",
     value: 0,
   },
   {
-    title: 'Pet (In Seat)',
-    description: 'An extra seat for your pet',
+    title: "Pet (In Seat)",
+    description: "An extra seat for your pet",
     value: 0,
   },
   {
-    title: 'Pet (In Carrier)',
-    description: 'Pet & carrier (max size/weight: 20 in x 12 in x 9 in, <20 lbs) must go and fit under the seat.',
+    title: "Pet (In Carrier)",
+    description:
+      "Pet & carrier (max size/weight: 20 in x 12 in x 9 in, <20 lbs) must go and fit under the seat.",
     value: 0,
   },
   {
-    title: 'Service Animal*',
-    description: 'Service animal must fit within passenger foot space',
+    title: "Service Animal*",
+    description: "Service animal must fit within passenger foot space",
     value: 0,
   },
-
-])
+]);
 
 // Total guest count
 const totalGuests = computed(() => {
-  return addGuest.value.reduce((sum, item) => sum + item.value, 0)
-})
+  return addGuest.value.reduce((sum, item) => sum + item.value, 0);
+});
 
-const isRoundTrip = ref(false)
-
+const isRoundTrip = ref(false);
 </script>
 
 <template>
   {{ flightStore.destinationData }}
   <div class="header">
     <router-link to="/">
-    <div class="logo">  
-      <v-img
-        src="/public/images/logo/logo.png"
-        max-height="20"
-        contain  
-        class="logo-img"
-      ></v-img>
-    </div>
+      <div class="logo">
+        <v-img
+          src="/public/images/logo/logo.png"
+          max-height="20"
+          contain
+          class="logo-img"
+        ></v-img>
+      </div>
     </router-link>
     <!-- Origin -->
     <div class="transport-wrapper d-none d-md-flex">
@@ -107,6 +102,7 @@ const isRoundTrip = ref(false)
           return-object
           density="compact"
           hide-details
+          theme="dark"
         >
           <template #item="data">
             <v-list-item v-bind="data.props" class="custom-select-item">
@@ -131,7 +127,7 @@ const isRoundTrip = ref(false)
               </template>
             </v-list-item>
           </template>
- 
+
           <template #selection="data">
             <div class="transport-place-container">
               <div class="transport-place">
@@ -171,6 +167,7 @@ const isRoundTrip = ref(false)
           variant="plain"
           return-object
           density="compact"
+          theme="dark"
         >
           <template #item="data">
             <v-list-item v-bind="data.props" class="custom-select-item">
@@ -215,23 +212,21 @@ const isRoundTrip = ref(false)
         </v-select>
       </div>
     </div>
-     
+
     <!-- Guest -->
-    <v-menu
-      v-model="menu"
-      :close-on-content-click="false"
-      transition="scale-transition"
-    >
+    <v-menu v-model="menu" :close-on-content-click="false" transition="scale-transition">
       <template v-slot:activator="{ props }">
         <div class="add-guest d-none d-md-flex" v-bind="props">
           <div class="guest-container">
             <div class="guest-title text-grey-darken-1">Guests</div>
             <div class="guest-content d-flex justify-space-between align-center">
-              <h2 class="text-h4 text-grey-lighten-2 font-weight-regular ">{{ totalGuests }}</h2>
+              <h2 class="text-h4 text-grey-lighten-2 font-weight-regular">
+                {{ totalGuests }}
+              </h2>
               <span class="mdi mdi-chevron-down"></span>
             </div>
           </div>
-        </div>  
+        </div>
       </template>
       <v-card color="black" class="guest-plate" width="380" max-height="440" rounded="0">
         <div v-for="(item, index) in addGuest" :key="index" class="plate-item">
@@ -243,63 +238,53 @@ const isRoundTrip = ref(false)
         </div>
 
         <v-card-actions class="guest-action d-flex justify-end">
-          <v-btn variant="text" size="small" @click="menu = false">
-            Done
-          </v-btn>
+          <v-btn variant="text" size="small" @click="menu = false"> Done </v-btn>
         </v-card-actions>
       </v-card>
     </v-menu>
 
-
     <!-- Round trip -->
     <div class="d-none d-md-flex align-center">
-    <!-- Vertical Switch -->
-    <v-switch
-      v-model="isRoundTrip"
-      class="custom-switch vertical-switch mr-3"
-      hide-details
-    >
-      <template #thumb>
-        <span class="switch-check mdi mdi-check"></span>
-      </template>
-    </v-switch>
+      <!-- Vertical Switch -->
+      <v-switch
+        v-model="isRoundTrip"
+        class="custom-switch vertical-switch mr-3"
+        hide-details
+      >
+        <template #thumb>
+          <span class="switch-check mdi mdi-check"></span>
+        </template>
+      </v-switch>
 
-    <!-- Labels -->
-    <div>
-      <div
-        class="text-body-2 font-weight-medium cursor-pointer"
-        :class="!isRoundTrip ? 'text-white' : 'text-grey-darken-1'"
-        @click="isRoundTrip = false"
-      >
-        One Way
-      </div>
-      <div
-        class="text-body-2 font-weight-medium cursor-pointer"
-        :class="isRoundTrip ? 'text-white' : 'text-grey-darken-1'"
-        @click="isRoundTrip = true"
-      >
-        Round Trip
+      <!-- Labels -->
+      <div>
+        <div
+          class="text-body-2 font-weight-medium cursor-pointer"
+          :class="!isRoundTrip ? 'text-white' : 'text-grey-darken-1'"
+          @click="isRoundTrip = false"
+        >
+          One Way
+        </div>
+        <div
+          class="text-body-2 font-weight-medium cursor-pointer"
+          :class="isRoundTrip ? 'text-white' : 'text-grey-darken-1'"
+          @click="isRoundTrip = true"
+        >
+          Round Trip
+        </div>
       </div>
     </div>
-  </div>
 
-  <router-link to="/departure">
-    <v-btn
-      class="next-btn d-none d-md-flex"
-      icon="mdi-arrow-right"
-      size="large"
-      rounded="lg"
-    ></v-btn> 
-  </router-link>
+    <router-link to="/departure">
+      <v-btn
+        class="next-btn d-none d-md-flex"
+        icon="mdi-arrow-right"
+        size="large"
+        rounded="lg"
+      ></v-btn>
+    </router-link>
 
-
-
-
-    <v-btn
-    density="comfortable"
-      icon="mdi-menu"
-      rounded="lg"
-    ></v-btn>
+    <v-btn density="comfortable" icon="mdi-menu" rounded="lg"></v-btn>
   </div>
 </template>
 
@@ -380,13 +365,14 @@ const isRoundTrip = ref(false)
   color: #ffffff;
 }
 ::v-deep(.v-field__input) {
-    padding-bottom: 0px !important;
+  padding-bottom: 10px !important;
+}
+::v-deep(.v-input) {
+  height: 100%;
 }
 .custom-select-item {
   border-top: 1px solid #c3c3c333;
-  transition: background-color 0.3s ease;
-  /* background-color: #000; */
-  /* color: #fff; */
+  /* transition: background-color 0.3s ease; */
 }
 
 .custom-select-item:hover {
@@ -407,7 +393,7 @@ const isRoundTrip = ref(false)
   color: #7184a2;
   font-size: 22px;
 }
-.guest-text{
+.guest-text {
   font-size: 12px;
   max-width: 220px;
 }
@@ -415,7 +401,7 @@ const isRoundTrip = ref(false)
 .select-item {
   padding: 10px 0;
 }
-.guest-title{
+.guest-title {
   font-size: 14px;
 }
 .select-item h6 {
@@ -453,7 +439,7 @@ const isRoundTrip = ref(false)
   border-left: 1px solid #a6acb541;
   border-right: 1px solid #a6acb541;
 }
-.guest-container{
+.guest-container {
   height: 100%;
   width: 100px;
   padding: 10px 10px;
@@ -498,30 +484,29 @@ const isRoundTrip = ref(false)
   transform: rotate(90deg);
   transform-origin: center center;
 }
-.switch-check{
+.switch-check {
   transform: rotate(-90deg);
   transform-origin: center center;
   color: white;
 }
 ::v-deep(.v-switch__track) {
-    padding: 0 5px;
-    height: 25px;
-    opacity: 0.8;
-    min-width: 50px;
+  padding: 0 5px;
+  height: 25px;
+  opacity: 0.8;
+  min-width: 50px;
 }
-::v-deep(.v-switch__thumb){
+::v-deep(.v-switch__thumb) {
   background-color: #6d92cf;
 }
-
+::v-deep(.v-overlay-container) {
+  display: none !important;
+}
 @media (max-width: 991px) {
-  .header{
+  .header {
     height: 60px;
     width: 95%;
     border-radius: 10px;
     padding: 0 20px;
   }
 }
-
-
-
 </style>
