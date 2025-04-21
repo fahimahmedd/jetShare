@@ -2,7 +2,7 @@
   <v-footer class="py-10">
     <v-container>
       <v-row>
-        <v-col cols="6" lg="3" md="4">
+        <v-col cols="6" xs="6" sm="4" lg="3" md="3">
           <h4 class="text-grey-darken-1 font-weight-regular">Aero</h4>
           <ul>
             <li><a href="#"> Safety </a></li>
@@ -14,7 +14,7 @@
             <li><a href="#"> Careers </a></li>
           </ul>
         </v-col>
-        <v-col cols="6" lg="3" md="4">
+        <v-col cols="6" xs="6" sm="4" lg="3" md="3">
           <h4 class="text-grey-darken-1 font-weight-regular">
             Guest Resources
           </h4>
@@ -28,7 +28,7 @@
             <li><a href="#"> Careers </a></li>
           </ul>
         </v-col>
-        <v-col cols="5" lg="2" md="4">
+        <v-col cols="5" xs="6" sm="4" lg="2" md="3">
           <h4 class="text-grey-darken-1 font-weight-regular">Connect</h4>
           <ul>
             <li><a href="#"> Contact Us </a></li>
@@ -38,7 +38,7 @@
             <li><a href="#"> X </a></li>
           </ul>
         </v-col>
-        <v-col cols="7" lg="4" md="4">
+        <v-col cols="7" xs="12" sm="12" lg="4" md="3">
           <h4 class="text-caption-2 text-grey-darken-1 font-weight-regular">
             Sign up for info on special partnerships and new destinations
           </h4>

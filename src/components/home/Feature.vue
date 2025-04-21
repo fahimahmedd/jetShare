@@ -1,19 +1,19 @@
 <script setup>
 const featureItems = [
   {
-    img: "/public/images/feature/feature-icon-1.svg",
+    img: "/images/feature/feature-icon-1.svg",
     text: "Save precious time by traveling between our private terminals—skip the lines and crowds.",
   },
   {
-    img: "/public/images/feature/feature-icon-2.svg",
+    img: "/images/feature/feature-icon-2.svg",
     text: "Check in curbside just 20 minutes before your flight and effortlessly board the jet.",
   },
   {
-    img: "/public/images/feature/feature-icon-3.svg",
+    img: "/images/feature/feature-icon-3.svg",
     text: "Fly in comfort with generous space, Italian leather seats, and a relaxing ambiance.",
   },
   {
-    img: "/public/images/feature/feature-icon-4.svg",
+    img: "/images/feature/feature-icon-4.svg",
     text: "Enjoy a premium open bar oboard.",
   },
 ];
@@ -22,7 +22,7 @@ const featureItems = [
 <template>
   <div
     class="feature"
-    style="background-image: url('/public/images/feature/feature-bg.svg')"
+    style="background-image: url('/images/feature/feature-bg.svg')"
   >
     <v-container>
       <v-row>
@@ -36,7 +36,8 @@ const featureItems = [
                 v-for="(item, id) in featureItems"
                 :key="id"
                 cols="12"
-                sm="12"
+                xs="12"
+                sm="6"
                 md="6"
                 lg="6"
               >
@@ -49,12 +50,17 @@ const featureItems = [
               </v-col>
             </v-row>
 
-            <v-btn class="booking-btn mt-16" variant="outlined"
-            rounded="xl" size="large" width="400"
-            >Book Your Seat</v-btn>
+            <v-btn
+              class="booking-btn mt-16"
+              variant="outlined"
+              rounded="xl"
+              size="large"
+              width="400"
+              >Book Your Seat</v-btn
+            >
           </div>
         </v-col>
-        <v-col>
+        <v-col cols="12" xs="12" sm="12" md="6" lg="6">
           <div class="feature-img">
             <v-img
               cover
@@ -94,23 +100,22 @@ const featureItems = [
   font-size: 38px;
   font-weight: 400;
 }
-.feature-item{
+.feature-item {
   padding: 20px;
 }
 .feature-item p {
   font-size: 14px;
   font-weight: 700;
 }
-.booking-btn{
-    background-color: #fff;
-    font-weight: 700;
-    color: #000;
+.booking-btn {
+  background-color: #fff;
+  font-weight: 700;
+  color: #000;
 }
 
 @media (max-width: 991px) {
-  .feature-item{
+  .feature-item {
     padding: 0px;
   }
 }
-
 </style>

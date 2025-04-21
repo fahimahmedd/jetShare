@@ -1,16 +1,21 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const tripType = ref('round')
-
+const tripType = ref("round");
 </script>
 
 <template>
   <div class="flight-container">
     <v-radio-group v-model="tripType" class="trip-toggle" hide-details inline>
-        <v-radio label="Round Trip" value="round" class="radio-option pb-3 active-border"/>
-        <v-radio label="One Way" value="oneway" class="radio-option pb-3" />
-      </v-radio-group>
+      <v-radio
+        label="Round Trip"
+        value="round"
+        class="radio-option pb-3 active-border"
+      />
+      <v-radio label="One Way" value="oneway" class="radio-option pb-3" />
+    </v-radio-group>
+
+    
   </div>
 </template>
 
@@ -20,18 +25,18 @@ const tripType = ref('round')
   max-width: 520px;
   margin: 0 auto;
 }
-.radio-option{
-    width: 50%;
-    font-size: 20px;
-    border-bottom: 2px solid;
+.radio-option {
+  width: 50%;
+  font-size: 20px;
+  border-bottom: 2px solid;
 }
-.active-border{
-    border-color: red;
+.active-border {
+  border-color: red;
 }
-::v-deep(.v-selection-control__wrapper){
-    display: none;
+::v-deep(.v-selection-control__wrapper) {
+  display: none;
 }
-::v-deep(.trip-toggle .v-label){
+::v-deep(.trip-toggle .v-label) {
   font-size: 20px !important;
   font-weight: 300;
 }

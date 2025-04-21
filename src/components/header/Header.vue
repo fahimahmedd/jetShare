@@ -306,6 +306,7 @@ const isRoundTrip = ref(false)
 .header {
   height: 90px;
   width: 95%;
+  max-width: 1440px;
   border: 1px solid #a6acb53f;
   background-color: #000000;
   position: fixed;

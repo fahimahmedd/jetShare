@@ -6,7 +6,7 @@
       <h2 class="text-black font-weight-medium">The Complete Travel Package</h2>
       <div
         class="package-bg mt-6 d-flex align-end"
-        style="background-image: url('/public/images/explore/package-bg.webp')"
+        style="background-image: url('/images/explore/package-bg.webp')"
       >
       <div class="package-content">
                 <h4 class="text-h6 font-weight-regular">Meadowood</h4>

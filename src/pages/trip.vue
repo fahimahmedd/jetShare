@@ -6,20 +6,20 @@ import SubHeader from "@/components/subPages/SubHeader.vue";
 <template>
   <div class="subpage-container">
     <v-row no-gutters>
-      <v-col cols="6">
+      <v-col cols="12" lg="6" md="6">
         <div
           class="subpage-left"
-          style="background-image: url('/public/images/subPage/trip.svg')"
+          style="background-image: url('/images/subPage/trip.svg')"
         >
           <router-link to="/">
             <div class="logo">
-              <v-img src="/public/images/logo/logo.png" max-width="130"></v-img>
+              <v-img src="/images/logo/logo.png" max-width="130"></v-img>
             </div>
           </router-link>
           <DepartureHistory />
         </div>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" lg="6" md="6">
         <div class="subpage-content">
           <SubHeader />
           <v-container>
@@ -75,5 +75,16 @@ h3 {
 .placeholder-text {
   position: relative;
   top: -30px;
+}
+
+@media (max-width: 991px) {
+  .subpage-container {
+  height: auto;
+}
+
+.subpage-left {
+  height: auto;
+}
+
 }
 </style>

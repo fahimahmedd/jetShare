@@ -9,11 +9,11 @@ import SubHeader from "@/components/subPages/SubHeader.vue";
       <v-col cols="12" lg="4" md="4">
         <div
           class="subpage-left"
-          style="background-image: url('/public/images/subPage/seat.svg')"
+          style="background-image: url('/images/subPage/seat.svg')"
         >
           <router-link to="/">
             <div class="logo">
-              <v-img src="/public/images/logo/logo.png" max-width="130"></v-img>
+              <v-img src="/images/logo/logo.png" max-width="130"></v-img>
             </div>
           </router-link>
 

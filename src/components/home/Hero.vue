@@ -27,19 +27,19 @@ const modules = [Autoplay, EffectFade];
     <swiper-slide>
       <div
         class="hero-slide"
-        style="background-image: url('/public/images/hero/hero-1.jpg')"
+        style="background-image: url('/images/hero/hero-1.jpg')"
       ></div>
     </swiper-slide>
     <swiper-slide>
       <div
         class="hero-slide"
-        style="background-image: url('/public/images/hero/hero-2.jpg')"
+        style="background-image: url('/images/hero/hero-2.jpg')"
       ></div>
     </swiper-slide>
     <swiper-slide>
       <div
         class="hero-slide"
-        style="background-image: url('/public/images/hero/hero-3.jpg')"
+        style="background-image: url('/images/hero/hero-3.jpg')"
       ></div>
     </swiper-slide>
   </swiper>
