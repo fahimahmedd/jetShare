@@ -106,6 +106,7 @@ const isRoundTrip = ref(false)
           variant="plain"
           return-object
           density="compact"
+          hide-details
         >
           <template #item="data">
             <v-list-item v-bind="data.props" class="custom-select-item">
@@ -384,6 +385,8 @@ const isRoundTrip = ref(false)
 .custom-select-item {
   border-top: 1px solid #c3c3c333;
   transition: background-color 0.3s ease;
+  /* background-color: #000; */
+  /* color: #fff; */
 }
 
 .custom-select-item:hover {
