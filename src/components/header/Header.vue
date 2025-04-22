@@ -10,6 +10,7 @@ const { originData } = storeToRefs(flightStore);
 const originList = computed(() => originData.value);
 const destinationList = computed(() => destinationData.value);
 
+
 const originPlaceholder = ref({
   city: "Origin",
   airport: "",
@@ -36,7 +37,6 @@ const destinationPlaceholder = ref({
   value: "",
 });
 
-// Guest Menu visibility
 const menu = ref(false);
 
 // Guest data
@@ -48,7 +48,7 @@ const addGuest = ref([
   },
   {
     title: "Infants",
-    description: "Ages 2–12",
+    description: "",
     value: 0,
   },
   {
@@ -75,21 +75,23 @@ const totalGuests = computed(() => {
 });
 
 const isRoundTrip = ref(false);
+
+
 </script>
 
 <template>
   {{ flightStore.destinationData }}
   <div class="header">
-    <router-link to="/">
-      <div class="logo">
-        <v-img
+    <router-link to="/" class="logo">
+      <v-img
           src="/public/images/logo/logo.png"
           max-height="20"
           contain
           class="logo-img"
         ></v-img>
-      </div>
     </router-link>
+
+
     <!-- Origin -->
     <div class="transport-wrapper d-none d-md-flex">
       <div class="transport-wrap">
